@@ -1,2 +1,3 @@
-# annotabene
-Browser extension for persistent annotation
+# WXT + React
+
+This template should help get you started developing with React in WXT.
