@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" width="250" height="250">
+  <defs>
+    <clipPath id="pencil-shape">
+      <path d="M0 25 L42 0 H290 A10 10 0 0 1 300 10 V40 A10 10 0 0 1 290 50 H42 Z"/>
+    </clipPath>
+  </defs>
+
+  <g transform="translate(-7.7 222.1) rotate(-45)">
+    <g clip-path="url(#pencil-shape)">
+      <!-- graphite point, bare wood, painted barrel -->
+      <rect x="0"  y="0" width="16"  height="50" fill="#2b2026"/>
+      <rect x="16" y="0" width="24"  height="50" fill="#fee7b3"/>
+      <rect x="40" y="0" width="260" height="50" fill="#fecc2b"/>
+
+      <!-- shading bands that suggest the hexagonal facets -->
+      <rect x="41" y="8"  width="259" height="16" fill="#000" opacity="0.2"/>
+      <rect x="41" y="40" width="259" height="10" fill="#000" opacity="0.2"/>
+
+      <!-- zigzag where the sharpened wood meets the paint -->
+      <path fill="#fee7b3" d="M40 0 L51.9 8 L40 16 Z
+                              M40 16 L51.9 24 L40 32 Z
+                              M40 32 L51.9 40 L40 48 Z
+                              M40 48 L43 50 L40 50 Z"/>
+
+      <!-- ferrule and eraser -->
+      <rect x="250" y="0" width="15" height="50" fill="#e7e7e7"/>
+      <rect x="265" y="0" width="35" height="50" fill="#fe668c"/>
+    </g>
+  </g>
+</svg>
