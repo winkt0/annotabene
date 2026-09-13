@@ -1,6 +1,6 @@
 import { browser } from "#imports";
 import type { Annotation } from "@/types/annotation";
-import { formatSaved, hostOf, pathOf } from "@/util/annotations";
+import { formatSaved, hostOf } from "@/util/annotations";
 import { PencilIcon } from "./icons";
 
 interface Props {
@@ -22,8 +22,7 @@ export function AnnotationRow({ annotation: Annotation, showHost = true, onEditN
     }
 
     function concat_url_and_title() {
-        const path = showHost ? host : pathOf(Annotation.url);
-        return path ? path + ": " + Annotation.website_title : Annotation.website_title;
+        return showHost ? host + ": " + Annotation.website_title : Annotation.website_title;
     }
 
     return (
