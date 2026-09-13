@@ -55,10 +55,12 @@ export default defineBackground(() => {
             }
         }
         const favIconUrl = tab?.favIconUrl;
+        const now = Date.now();
         const annotation: Annotation = {
             url,
             annotated_text: range.toString(),
-            createdAt: Date.now(),
+            createdAt: now,
+            updatedAt: now,
             favicon: favIconUrl,
             id: Math.random().toString(36),
             website_title: document.title,
