@@ -1,6 +1,7 @@
 import { storage } from "#imports";
 import type { Annotation } from "@/types/annotation";
 import { useEffect, useState } from "react";
+import { DEFAULT_SETTINGS, type ThemeSettings } from "./theme";
 
 export const annotationsStore = storage.defineItem<Annotation[]>("local:annotabene:annotations", {
     fallback: [],
@@ -42,3 +43,8 @@ export async function removeAnnotation(id: string) {
     const current = await annotationsStore.getValue();
     await annotationsStore.setValue(current.filter(annotation => annotation.id !== id));
 }
+
+export const themeStore = storage.defineItem<ThemeSettings>("local:annotabene:theme", {
+    fallback: DEFAULT_SETTINGS,
+    version: 1,
+});

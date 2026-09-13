@@ -47,3 +47,46 @@ export function ChevronIcon() {
         </svg>
     );
 }
+
+export function SlidersIcon() {
+    return (
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path
+                d="M2.5 5h2.2M7.9 5h5.6M2.5 11h5.6M11.3 11h2.2"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+            />
+            <circle cx="6.3" cy="5" r="1.6" stroke="currentColor" strokeWidth="1.4" />
+            <circle cx="9.7" cy="11" r="1.6" stroke="currentColor" strokeWidth="1.4" />
+        </svg>
+    );
+}
+
+export function BackIcon() {
+    return (
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path
+                d="M10 3.5 5.5 8l4.5 4.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+
+export function CheckIcon() {
+    return (
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path
+                d="M3.5 8.5 6.3 11.3 12.5 5"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
