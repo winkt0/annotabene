@@ -10,7 +10,16 @@ export default defineConfig({
     srcDir: "src",
     manifest: {
         name: "annotabene",
-        description: "Annotate text, add notes, see a list of all your annotations in the extension's popup",
+        description: "Annotate text, see a list of all your annotations in the extension's popup",
         permissions: ["contextMenus", "scripting", "storage", "activeTab"],
+        version: "1.0",
+        browser_specific_settings: {
+            gecko: {
+                id: "extensionname@example.org",
+                data_collection_permissions: {
+                    required: ["none"],
+                },
+            },
+        },
     },
 });
