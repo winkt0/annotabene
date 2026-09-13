@@ -16,21 +16,21 @@ export default defineBackground(() => {
         const [injection] = await browser.scripting.executeScript({
             target: { tabId: tab.id },
             func: annotateSelection,
-            args: [color],
+            args: [color, tab],
         });
         const annotation = injection?.result as Annotation | undefined;
         if (!annotation) return;
         storage
-            .getItem<Annotation[]>(`local:annotabene:${annotation.url}`, {
+            .getItem<Annotation[]>(`local:annotabene:annotations`, {
                 fallback: [],
             })
             .then(list => {
                 list.push(annotation);
-                storage.setItem<Annotation[]>(`local:annotabene:${annotation.url}`, list);
+                storage.setItem<Annotation[]>(`local:annotabene:annotations`, list);
             });
     });
 
-    function annotateSelection(color: string): Annotation | undefined {
+    function annotateSelection(color: string, tab: globalThis.Browser.tabs.Tab | undefined): Annotation | undefined {
         const selection = window.getSelection();
         if (!selection || selection.rangeCount === 0 || selection.isCollapsed) return;
         const range = selection.getRangeAt(0);
@@ -54,7 +54,16 @@ export default defineBackground(() => {
                 // malformed og:url, keep location.href
             }
         }
-        const annotation: Annotation = { url, annotated_text: range.toString() };
+        const favIconUrl = tab?.favIconUrl;
+        const annotation: Annotation = {
+            url,
+            annotated_text: range.toString(),
+            createdAt: Date.now(),
+            favicon: favIconUrl,
+            id: Math.random().toString(36),
+            website_title: document.title,
+            note: "",
+        };
         return annotation;
     }
 });
