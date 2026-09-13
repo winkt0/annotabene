@@ -13,7 +13,7 @@ export function pathOf(url: string): string {
     try {
         const { pathname, search } = new URL(url);
         const tail = (pathname + search).replace(/\/$/, "");
-        return tail === "" ? "/" : tail;
+        return tail;
     } catch {
         return "";
     }

@@ -21,6 +21,11 @@ export function AnnotationRow({ annotation: Annotation, showHost = true, onEditN
         window.close();
     }
 
+    function concat_url_and_title() {
+        const path = showHost ? host : pathOf(Annotation.url);
+        return path ? path + ": " + Annotation.website_title : Annotation.website_title;
+    }
+
     return (
         <li className="row">
             <a className="row__link" href={Annotation.url} onClick={open}>
@@ -37,9 +42,7 @@ export function AnnotationRow({ annotation: Annotation, showHost = true, onEditN
 
                     <span className="row__meta">
                         <span className="row__source">
-                            <span className="row__source-text">
-                                {(showHost ? host : pathOf(Annotation.url)) + ": " + Annotation.website_title}
-                            </span>
+                            <span className="row__source-text">{concat_url_and_title()}</span>
                         </span>
                         <time className="row__date" dateTime={new Date(Annotation.createdAt).toISOString()}>
                             {formatSaved(Annotation.createdAt)}
