@@ -10,6 +10,7 @@ export default defineConfig({
     srcDir: "src",
     manifest: {
         name: "annotabene",
+        host_permissions: ["*://*/"],
         description: "Annotate text, see a list of all your annotations in the extension's popup",
         permissions: ["contextMenus", "scripting", "storage", "activeTab"],
         version: "1.0",
