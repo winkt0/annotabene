@@ -31,13 +31,13 @@ export function AnnotationRow({ annotation: Annotation, showHost = true, onEditN
                 <Favicon annotation={Annotation} host={host} />
 
                 <span className="row__body">
-                    <span className="row__title">{Annotation.annotated_text}</span>
-
                     {Annotation.note ? (
                         <span className="row__note">{Annotation.note}</span>
                     ) : (
                         <span className="row__note row__note--empty">No note yet</span>
                     )}
+
+                    <span className="row__annotated_text">{Annotation.annotated_text}</span>
 
                     <span className="row__meta">
                         <span className="row__source">
