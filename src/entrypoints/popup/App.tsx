@@ -45,7 +45,6 @@ export default function App() {
                                 className="search__input"
                                 type="search"
                                 value={query}
-                                autoFocus
                                 placeholder="Search annotations, notes, dates"
                                 onChange={event => setQuery(event.target.value)}
                             />
