@@ -31,7 +31,7 @@ export function searchAnnotations(annotations: Annotation[], query: string): Ann
 
 // TODO
 export function sortAnnotations(annotations: Annotation[]): Annotation[] {
-    return annotations;
+    return annotations.sort((a1, a2) => a2.createdAt - a1.createdAt);
 }
 
 export function groupByDomain(annotations: Annotation[]): DomainGroup[] {
